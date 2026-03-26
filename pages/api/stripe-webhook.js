@@ -1,12 +1,27 @@
 import prisma from '../../lib/prisma'
 import Stripe from 'stripe'
-import { buffer } from 'micro'
+
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+}
+
 export const config = { api: { bodyParser: false } }
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '')
-export default async function handler(req,res){
-  if(req.method !== 'POST') return res.status(405).end()
-  const sig = req.headers['stripe-signature']
-  const webhookSecret = process.env.WEBHOOK_SECRET || ''
+export default async function handler(req, res) {
+  if (req.method !== 'POST') return res.status(405).end()
+
+  // Temporary simplified webhook (no micro dependency)
+  try {
+    console.log("Webhook received")
+
+    return res.json({ received: true })
+  } catch (err) {
+    console.error(err)
+    return res.status(500).json({ error: 'Webhook error' })
+  }
+}
   let event
   try {
     const buf = await buffer(req)
