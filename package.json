@@ -1,29 +1,21 @@
 {
   "name": "the-gentlemans-club",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "description": "The Gentleman's Club: Premium adult content subscription site.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
-  "next": "14.0.0",
-  "react": "18.2.0",
-  "react-dom": "18.2.0",
-  "stripe": "11.0.0",
-  "aws-sdk": "2.1400.0",
-  "bcryptjs": "2.4.3",
-  "prisma": "5.8.0",
-  "@prisma/client": "5.8.0",
-  "jsonwebtoken": "9.0.0",
-  "micro": "9.3.4"
-}
-  },
-  "devDependencies": {
-    "autoprefixer": "10.4.14",
-    "postcss": "8.4.24",
-    "tailwindcss": "4.0.0"
+    "next": "14.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "stripe": "11.0.0",
+    "aws-sdk": "2.1400.0",
+    "bcryptjs": "2.4.3",
+    "prisma": "5.8.0",
+    "@prisma/client": "5.8.0",
+    "jsonwebtoken": "9.0.0"
   }
 }
