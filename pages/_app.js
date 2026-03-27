@@ -2,7 +2,7 @@ import '../styles/globals.css'
 
 export default function App({ Component, pageProps }) {
   return (
-    <div className="relative z-10">
+    <div style={{ position: 'relative', zIndex: 9999 }}>
       <Component {...pageProps} />
     </div>
   )
