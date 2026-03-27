@@ -5,6 +5,7 @@ export default function Header() {
         <div className="text-xl font-bold">The Gentleman's Club</div>
 
         <div className="flex gap-3">
+          {/* Login */}
           <a
             href="/login"
             className="px-3 py-1 rounded border hover:bg-gray-100 transition"
@@ -12,12 +13,18 @@ export default function Header() {
             Login
           </a>
 
+          {/* Subscribe (Stripe Checkout) */}
           <a
             href="#"
             onClick={async () => {
-              const res = await fetch('/api/checkout')
-              const data = await res.json()
-              window.location.href = data.url
+              try {
+                const res = await fetch('/api/checkout')
+                const data = await res.json()
+                window.location.href = data.url
+              } catch (err) {
+                console.error('Checkout failed', err)
+                alert('Checkout failed. Try again.')
+              }
             }}
             className="px-3 py-1 rounded bg-black text-white hover:opacity-90 transition cursor-pointer"
           >
