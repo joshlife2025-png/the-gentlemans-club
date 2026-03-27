@@ -3,3 +3,6 @@
 @tailwind utilities;
 
 body { background-color: #f8fafc; }
+* {
+  pointer-events: auto !important;
+}
